@@ -1,0 +1,78 @@
+.advice {
+  &-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 65rem;
+    margin: auto;
+    margin-bottom: 7rem;
+  }
+  &-title {
+    margin-bottom: 3rem;
+  }
+  &-item {
+    display: flex;
+    align-items: center;
+    &-media {
+      position: relative;
+      width: 100%;
+      max-width: 55rem;
+      height: 57rem;
+      flex-shrink: 0;
+      & > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    &-content {
+      width: 100%;
+      max-width: 65rem;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      &-left {
+        align-self: flex-start;
+        width: 7.5rem;
+        height: 7.5rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        position: relative;
+        font-size: 4rem;
+        color: $primary-color;
+        margin-right: 5rem;
+        @include fontTitle;
+        &::after {
+          @include pesudo;
+          inset:0;
+          background-color: currentColor;
+          opacity: 0.15;
+          border-radius: inherit;
+        }
+      }
+      &-right {
+        flex: 1;
+      }
+    }
+    &-title{
+      font-size: 4.7rem;
+      font-weight: 500;
+      line-height: 1.46;
+      margin-bottom: 2rem;
+    }
+    &-desc {
+      line-height: 2.1;
+    }
+    &:nth-child(odd){
+      flex-direction: row-reverse;
+    }
+  }
+}

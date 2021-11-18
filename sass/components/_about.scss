@@ -1,0 +1,76 @@
+
+
+.about{
+  display: flex;
+  align-items: center;
+  &-media {
+    width: 100%;
+    max-width: 84rem;
+    transform: translateX(-15rem) rotate(-10deg);
+    height: 80rem;
+    position: relative;
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      //transform: scale(0);
+    }
+  }
+  &-content {
+    width: 100%;
+    max-width: 64rem;
+  }
+  &-desc {
+    margin-top: 1.8rem;
+    font-size: 2rem;
+    line-height: 2.15;
+    color: $text-color;
+  }
+  &-btn {
+    color: $primary-color;
+    position: relative;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-top: 7.5rem;
+    display:inline-block;
+    border-radius: 4.6rem;
+    // & > .btn {
+    //   baccolor: $primary-color;
+    // }
+    &::after {
+      @include pesudo;
+      inset:0;
+      background-color: currentColor;
+      opacity: 0.15;
+      border-radius: inherit;
+    }
+  }
+  &-virus {
+    &-1 {
+      position: absolute;
+      right: 0;
+      bottom: 8rem;
+      width: 29rem;
+      height: 29rem;
+      transform: translateX(50%);
+      z-index: 1;
+    }
+    &-2 {
+      position: absolute;
+      right: 10rem;
+      bottom: 0;
+      width: 13rem;
+      height: 13rem;
+      z-index: 1;
+    }
+    &-1,&-2 {
+      & > object {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

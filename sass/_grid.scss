@@ -1,0 +1,29 @@
+
+$numbers:(1,2,3,4,5,6,7,8,9);
+
+.grid {
+  display: grid;
+  gap: 3rem;
+}
+
+@each $num in $numbers {
+  .grid-col-#{$num} {
+    grid-template-columns: repeat($num,1fr);
+  }
+}
+
+@each $num in $numbers {
+  @include tablet {
+    .grid-col-md-#{$num} {
+      grid-template-columns: repeat($num,1fr);
+    }
+  }
+}
+
+@each $num in $numbers {
+  @include mobile {
+    .grid-col-sm-#{$num} {
+      grid-template-columns: repeat($num,1fr);
+    }
+  }
+}

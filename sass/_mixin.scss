@@ -1,0 +1,9 @@
+
+@mixin fontTitle {
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+@mixin pesudo {
+  content: "";
+  position: absolute;
+}

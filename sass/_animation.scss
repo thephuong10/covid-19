@@ -1,0 +1,64 @@
+
+@mixin transform(
+  $duration:1s,
+  $cubic-bezier:"ease",
+  $transform-init:"none",
+  $transform-effect:"none"
+  ) {
+  overflow: hidden;
+  & > .children {
+    opacity: 0;
+    transition: $duration $cubic-bezier;
+    transform: $transform-init;
+    display: block;
+  }
+  &.start {
+    & > .children {
+      opacity: 1;
+      transform: $transform-effect;
+    }
+  }
+}
+
+.top-to-bottom {
+  @include transform(1s, cubic-bezier(.215,.61,.355,1), translateY(-100%), translateY(0))
+}
+.bottom-to-top {
+  @include transform(1s, cubic-bezier(.215,.61,.355,1), translateY(100%), translateY(0))
+}
+.left-to-right {
+  @include transform(1.2s, cubic-bezier(.17,.67,.3,1.33),skewX(-30deg) translateX(-100%), skewX(0) translateX(0))
+}
+.right-to-left {
+  @include transform(1.2s, cubic-bezier(.17,.67,.3,1.33),skewX(30deg) translateX(100%), skewX(0) translateX(0))
+}
+
+
+
+.scale-full {
+  & > .children {
+    display: block;
+    transition: transform 1s cubic-bezier(.17,.67,.3,1.33);
+    transform: scale(0);
+  }
+  &.start {
+    & > .children {
+      transform: scale(1);
+    }
+  }
+}
+
+.left-to-right-x2,.right-to-left-x2 {
+  opacity: 0;
+  transition: 0.8s cubic-bezier(.17,.67,.3,1.33);
+  &.start {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.left-to-right-x2{
+  transform: translateX(-200%);
+}
+.right-to-left-x2{
+  transform: translateX(200%);
+}
