@@ -46,12 +46,14 @@ img {
 .section {
   position: relative;
   margin-bottom: 14rem;
+  z-index: 1000;
 }
 .title {
   font-size: 5rem;
   line-height: 1.2;
   font-weight: 700;
   font-family: 'Red Hat Display', sans-serif;
+  color: $title-color;
 }
 .covid-19 {
   font-size: 2.9rem;
@@ -69,20 +71,61 @@ img {
   padding: 1.6rem 4.5rem;
   font-size: 1.8rem;
   font-weight: 500;
-  line-height: 1.2;
   background-color: transparent;
   transition: 0.3s ease;
   border-radius: 4.6rem;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
   &.btn-outlined {
-    border: 2px solid $primary-color;
-    color: $primary-color;
+    &-info {
+      border: 2px solid $info-color;
+      color: $info-color;
+    }
+    &-primary {
+      border: 2px solid $primary-color;
+      color: $primary-color;
+    }
   }
   &.btn-contained {
+    &-info {
+      background-color: $info-color;
+
+    }
+    &-primary {
+      background-color: $primary-color;
+    }
+  }
+  &.btn-bg-opacity {
+    &-info {
+      color: $info-color;
+      background-color: rgba($color: $info-color, $alpha: 0.15);
+    }
+    &-primary {
+      color: $primary-color;
+      background-color: rgba($color: $primary-color, $alpha: 0.15);
+    }
+  }
+  &[class*="btn-contained-"]{
     color: white;
-    background-color: $primary-color;
   }
 }
 
+.textOverflow-line-1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
 
-
+@include tablet {
+  .title {
+    font-size: 4rem;
+  }
+  .section {
+    margin-bottom: 10rem;
+  }
+  .covid-19 {
+    font-size: 2.5rem;
+  }
+}

@@ -75,4 +75,16 @@
       flex-direction: row-reverse;
     }
   }
+  @include tablet {
+
+    &-item {
+      flex-direction: column !important;
+      &-content {
+        max-width: 100%;
+      }
+      & + & {
+        margin-top: 3rem;
+      }
+    }
+  }
 }

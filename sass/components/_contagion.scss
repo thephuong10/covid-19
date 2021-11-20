@@ -26,6 +26,7 @@
     padding: 5rem 0 7rem 0;
     cursor: pointer;
     background-color: white;
+    height: 100%;
     &-media {
       position: relative;
       width: 100%;
@@ -70,6 +71,18 @@
     & > object{
       height: 100%;
       width: 100%;
+    }
+  }
+
+  @include tablet {
+    &-top {
+      margin-bottom: 5rem;
+    }
+    &-item {
+      padding: 3rem 0 4rem 0;
+      &-title {
+        font-size: 2.8rem;
+      }
     }
   }
 }

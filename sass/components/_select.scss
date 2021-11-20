@@ -1,0 +1,14 @@
+.select {
+  min-width: 350px;
+  border-radius: 10px;
+  background-color: white;
+  &-options {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+  &-option {
+    width: 100%;
+    padding: 2rem 0;
+  }
+}

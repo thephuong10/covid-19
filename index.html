@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://unpkg.com/flickity-fade@1/flickity-fade.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
 <body>
   <div class="wrapper" data-scroll-container>
@@ -38,7 +40,7 @@
             </li>
             <span class="close-menu"><i class='bx bx-x'></i></span>
           </ul>
-          <div class="header-btn btn btn-outlined">Contact</div>
+          <div class="header-btn btn btn-outlined-primary">Contact</div>
         </div>
       </div>
     </header>
@@ -67,13 +69,16 @@
               </p>
               <div class="hero-btn scale-full" data-scroll
               data-scroll-call="showElement">
-                <div class="children btn btn-contained">Let Us Help</div>
+                <div class="children btn btn-contained-primary">Let Us Help</div>
               </div>
             </div>
-            <div class="hero-media scale-full"
-                data-scroll
-                data-scroll-call="showElement">
+            <div class="hero-media">
+              <div class="scale-full"
+                     data-scroll
+                     data-scroll-call="showElement"
+                     >
               <img class="children" srcset="./assets/images/hero-img.png 2x" alt="hero">
+             </div>
             </div>
           </div>
         </div>
@@ -81,11 +86,13 @@
       <div class="section">
         <div class="container">
           <div class="about">
-            <div class="about-media scale-full"
-              data-scroll
-              data-scroll-call="showElement"
+            <div class="about-media"
               >
+             <div class="scale-full"
+             data-scroll
+             data-scroll-call="showElement">
               <img class="children" srcset="./assets/images/about.png 2x" alt=""/>
+             </div>
             </div>
             <div class="about-content">
               <span class="covid-19 top-to-bottom"
@@ -105,7 +112,7 @@
                  data-scroll-call="showElement"
               ><span class="children">Corona viruses are a type of virus. There are many different kinds, and some cause disease. A newly identified type has caused a recent outbreak of respiratory illness now called COVID-19.Lauren Sauer, M.S., the director of operations with the Johns Hopkins Office of Critical Event Preparedness and Response</span></p>
               <div class="scale-full about-btn" data-scroll data-scroll-call="showElement">
-                <div class="btn children">Learn More</div>
+                <div class="btn btn-bg-opacity-primary children">Learn More</div>
               </div>
             </div>
           </div>
@@ -130,8 +137,8 @@
               data-scroll-call="showElement"><span class="children">Corona viruses are a type of virus. There are many different kinds, and some cause disease. A newly identified type</span></p>
             </div>
             <div class="contagion-main">
-              <div class="grid grid-col-3">
-                <div class="scale-full" data-scroll
+              <div class="row">
+                <div class="scale-full col-4 col-md-6 col-sm-12" data-scroll
               data-scroll-call="showElement">
                   <div class="contagion-item children">
                     <div class="contagion-item-media">
@@ -143,7 +150,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="scale-full" data-scroll
+                <div class="scale-full col-4 col-md-6 col-sm-12" data-scroll
               data-scroll-call="showElement">
                   <div class="contagion-item children">
                     <div class="contagion-item-media">
@@ -155,7 +162,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="scale-full" data-scroll
+                <div class="scale-full col-4 col-md-6 col-sm-12" data-scroll
               data-scroll-call="showElement">
                   <div class="contagion-item children">
                     <div class="contagion-item-media">
@@ -188,9 +195,12 @@
               data-scroll-call="showElement"><span class="children">Corona viruses are a type of virus. There are many different kinds, and some cause disease. A newly identified type has caused a recent outbreak of respiratory</span></p>
             </div>
             <div class="symptomps-main">
-              <div class="symptomps-media scale-full" data-scroll
-              data-scroll-call="showElement">
+              <div class="symptomps-media">
+               <div class="scale-full"
+                    data-scroll
+                    data-scroll-call="showElement">
                 <img class="children" srcset="./assets/images/symptomps-img.png 2x" alt="" >
+               </div>
               </div>
             </div>
             <div class="symptomps-path-1 scale-full"
@@ -308,6 +318,83 @@
           </div>
         </div>
       </div>
+      <div class="section">
+        <div class="container">
+          <div class="live-reports">
+            <h2 class="live-reports-title title">
+              Live Reports
+            </h2>
+            <div class="live-reports-main">
+              <div class="live-reports-chart">
+                <div class="row">
+                  <div class="col-8 col-md-12">
+                    <!-- statistical -->
+                    <div class="row">
+                      <div class="col-4 col-md-6 col-sm-12">
+                        <div class="count count-confirmed">
+                          <div class="count-icon">
+                            <i class='bx bxs-virus'></i>
+                          </div>
+                          <div class="count-info">
+                            <span class="count-title">Confirmed</span>
+                            <p class="count-total textOverflow-line-1"></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-md-6 col-sm-12">
+                        <div class="count count-recovered">
+                          <div class="count-icon">
+                            <i class='bx bxs-smile'></i>
+                          </div>
+                          <div class="count-info">
+                            <span class="count-title">Recovered</span>
+                            <p class="count-total textOverflow-line-1"></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-md-6 col-sm-12">
+                        <div class="count count-death">
+                          <div class="count-icon">
+                            <i class='bx bxs-sad'></i>
+                          </div>
+                          <div class="count-info">
+                            <span class="count-title">Death</span>
+                            <p class="count-total textOverflow-line-1"></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- statistical end -->
+                    <div class="chart">
+                      <p class="title">The chart shows the situation of the covid 19 epidemic</p>
+                      <div id="time-all-chart"></div>
+                    </div>
+                  </div>
+                  <div class="col-4 col-md-8 col-sm-12 country-wrap">
+                    <div class="country" id="select-country">
+                      <div
+                        class="country-top">
+                        <div class="country-actions">
+                          <input id="find-country" class="btn btn-outlined-info" type="text" placeholder="Search country name"/>
+                          <div class="country-arrows">
+                            <span class="btn btn-outlined-info" id="country-arrows-prev"><i class='bx bxs-chevron-left'></i></span>
+                            <span class="btn btn-outlined-info" id="country-arrows-next"><i class='bx bxs-chevron-right'></i></span>
+                          </div>
+                        </div>
+                        <p class="country-selected btn btn-contained-primary">Global</p>
+                      </div>
+                        <div class="country-list">
+                          <div class="carousel">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="footer" data-scroll-section>
       <div class="container footer-main">
@@ -330,6 +417,12 @@
     </footer>
     <div style="width:10px;height:200px"></div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
+  <script src="./js/fakedata.js"></script>
+  <script src="./js/fetchApi.js"></script>
+  <script src="./js/covid19Api.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
   <script src="./js/index.js"></script>
 </body>

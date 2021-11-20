@@ -1,29 +1,40 @@
+$numbers:(1,2,3,4,5,6,7,8,9,10,11,12);
 
-$numbers:(1,2,3,4,5,6,7,8,9);
-
-.grid {
-  display: grid;
-  gap: 3rem;
-}
-
-@each $num in $numbers {
-  .grid-col-#{$num} {
-    grid-template-columns: repeat($num,1fr);
-  }
-}
-
-@each $num in $numbers {
-  @include tablet {
-    .grid-col-md-#{$num} {
-      grid-template-columns: repeat($num,1fr);
-    }
-  }
-}
-
-@each $num in $numbers {
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -2rem;
   @include mobile {
-    .grid-col-sm-#{$num} {
-      grid-template-columns: repeat($num,1fr);
+    margin-left:0;
+  }
+}
+
+[class*="col-"] {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+@each $col in $numbers {
+  .col-#{$col} {
+    width: calc(calc(calc(100% * $col) / 12) - 2rem);
+  }
+}
+
+@each $col in $numbers {
+  @include tablet {
+    .col-md-#{$col} {
+      width: calc(calc(calc(100% * $col) / 12) - 2rem);
     }
   }
 }
+
+@each $col in $numbers {
+  @include mobile {
+    .col-sm-#{$col} {
+      width: calc(calc(calc(100% * $col) / 12) - 2rem);
+    }
+  }
+}
+
+/* 1/12 * 12  */
+
